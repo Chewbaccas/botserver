@@ -1,0 +1,19 @@
+{
+  "name": "botserver",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Chewbaccas/botserver.git"
+  },
+  "author": "Chewbaccas",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Chewbaccas/botserver/issues"
+  },
+  "homepage": "https://github.com/Chewbaccas/botserver#readme"
+}
