@@ -15,7 +15,7 @@ node server.js
 
 ```
 
-## Running localy
+## Running locally
 
 In another terminal, type:
 
