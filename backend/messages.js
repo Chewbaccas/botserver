@@ -4,11 +4,11 @@
  * Created by: TheCoffeeForce Team
  * Last Modified: 11/12/2016
  */
-(function(exports){
+(function(scope){
 
-	exports = {
+	var locale = "pt_BR";
 
-		ptBR: {
+	scope["pt_BR"] = {
 			".init": "Olá, meu nome é 1Help, estou aqui para ser seu amigo e ajudar a negociar suas dívidas da melhor forma possível. O que posso fazer por você hoje ?",
 
 			"ola": "Olá ! Tudo bom meu jovem ? O que tá pegando ?",
@@ -20,15 +20,28 @@
 			"opa, com certeza !": "Pagamento realizado meu chapa, só não vá estourar o limite novamente com bebida e puta ! Abraço, se cuida truta, é nóis.",
 
 			".default": "Aí você me complica parceiro, explica isso ai melhor vai, to sem dormir desde ontem poxa !"
-		}
+	};
 
-		get: function(key) {
-			return this["ptBR"][key];
-		}
+	scope["en_US"] = {
+		// TODO
+	};
 
-		getDefault: function() {
-			return this["ptBR"][".default"];
+	scope["es_ES"] = {
+		// TODO
+	};
+
+	scope.changeLocale = function(locale) {
+		if(locale != null && this[locale]) {
+			locale = locale;
 		}
 	}
+
+	scope.get = function(key) {
+		return this[locale][key];
+	};
+
+	scope.getDefault = function() {
+		return this[locale][".default"];
+	};
 
 })(module.exports = {});

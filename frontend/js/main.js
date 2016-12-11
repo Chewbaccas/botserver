@@ -25,20 +25,15 @@
 			message: message
 		});
 
-        $.ajax({
-            url: config.botendpoint,
-            type: 'post',
-            dataType: 'json',
-            data: JSON.stringify({ question: message }),
-            success: function (data) {
-            	render({
+		$.post(config.botendpoint, JSON.stringify({ question: message }), function(data) {
+			render({
 					imgsrc: "https://image.freepik.com/icones-gratis/avatar-mulher_318-68929.jpg",
 					person: "T-800",
 					time: new Date().toLocaleTimeString(),
 					message: data.answer
 				});
-            }
-        });
+		}, "json");
+
 	});
 
 	function render(data) {

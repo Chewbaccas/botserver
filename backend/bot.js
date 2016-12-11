@@ -10,7 +10,7 @@
 
 	function fn_handle(text) {
 		var response = messages.get(text);
-		response ? response : messages.getDefault();
+		return response ? response : messages.getDefault();
 	}
 
 

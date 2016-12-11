@@ -10,26 +10,8 @@
 	  name: 'botapp',
 	  version: '1.0.0'
 	});
-	server.use(restify.acceptParser(server.acceptable));
 	server.use(restify.queryParser());
 	server.use(restify.bodyParser());
-	/*server.use(function crossOrigin(req,res,next){
-	    res.header("Access-Control-Allow-Origin", "localhost");
-	    res.header("Access-Control-Allow-Headers", "X-Requested-With");
-	    res.header("Access-Control-Allow-Methods", "GET, POST");
-	    return next();
-	});*/
-	restify.CORS.ALLOW_HEADERS.push('Accept');
-	restify.CORS.ALLOW_HEADERS.push('Sid');
-	restify.CORS.ALLOW_HEADERS.push('Lang');
-	restify.CORS.ALLOW_HEADERS.push('Origin');
-	restify.CORS.ALLOW_HEADERS.push('withcredentials');
-	restify.CORS.ALLOW_HEADERS.push('X-Requested-With');
-	restify.CORS.ALLOW_HEADERS.push('Authorization');
-	restify.CORS.ALLOW_HEADERS.push('Accept-Encoding');
-	restify.CORS.ALLOW_HEADERS.push('Accept-Language');
-	//server.use(restify.CORS());
-	//server.use(restify.fullResponse());
 	 
 	// main
 	server.post('/chat/', function (req, res, next) {
@@ -47,7 +29,14 @@
 	});
 
 	function handleRequest(req, res, next) {
+		res.setHeader('Access-Control-Allow-Origin', '*');
+		res.setHeader('Access-Control-Allow-Headers', 'Origin, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version, X-Response-Time, X-PINGOTHER, X-CSRF-Token,Authorization');
+		res.setHeader('Access-Control-Allow-Methods', '*');
+		res.setHeader('Access-Control-Expose-Headers', 'X-Api-Version, X-Request-Id, X-Response-Time');
+		res.setHeader('Access-Control-Max-Age', '1000');
+		console.log(res);
 		var answerText = bot.handle(req.params.question);
+		console.log(answerText);
 	  	res.send(new Answer(answerText));
 	  	return next();
 	}
