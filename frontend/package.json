@@ -1,0 +1,23 @@
+{
+  "name": "botchat",
+  "version": "1.0.0",
+  "description": "The Code Force Hackathon",
+  "scripts": {
+  	"start": "http-server",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thecoffeeforce/thecodeforce.git"
+  },
+  "author": "TheCofeeForce",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/thecoffeeforce/thecodeforce/issues"
+  },
+  "homepage": "https://github.com/thecoffeeforce/thecodeforce#readme",
+  "dependencies": {
+    "http-server": "^0.9.0",
+    "restify": "^4.3.0"
+  }
+}
