@@ -13,7 +13,11 @@ npm install
 
 node server.js
 
-In another terminal
+```
+
+## Running localy
+
+In another terminal, type:
 
 bash ./ngrok
 
@@ -25,7 +29,6 @@ Paste the url on Bot framework Messaging endpoint
 
 Be happy!
 
-```
 ## Technology
 
 1. NodeJS (https://nodejs.org/en/)
