@@ -13,14 +13,23 @@
 	server.use(restify.acceptParser(server.acceptable));
 	server.use(restify.queryParser());
 	server.use(restify.bodyParser());
-	server.use(function crossOrigin(req,res,next){
-	    res.header("Access-Control-Allow-Origin", "http://localhost");
+	/*server.use(function crossOrigin(req,res,next){
+	    res.header("Access-Control-Allow-Origin", "localhost");
 	    res.header("Access-Control-Allow-Headers", "X-Requested-With");
 	    res.header("Access-Control-Allow-Methods", "GET, POST");
 	    return next();
-	});
-	server.use(restify.CORS());
-	server.use(restify.fullResponse());
+	});*/
+	restify.CORS.ALLOW_HEADERS.push('Accept');
+	restify.CORS.ALLOW_HEADERS.push('Sid');
+	restify.CORS.ALLOW_HEADERS.push('Lang');
+	restify.CORS.ALLOW_HEADERS.push('Origin');
+	restify.CORS.ALLOW_HEADERS.push('withcredentials');
+	restify.CORS.ALLOW_HEADERS.push('X-Requested-With');
+	restify.CORS.ALLOW_HEADERS.push('Authorization');
+	restify.CORS.ALLOW_HEADERS.push('Accept-Encoding');
+	restify.CORS.ALLOW_HEADERS.push('Accept-Language');
+	//server.use(restify.CORS());
+	//server.use(restify.fullResponse());
 	 
 	// main
 	server.post('/chat/', function (req, res, next) {
