@@ -21,10 +21,10 @@ var middleware = require('botkit-middleware-watson');
 
 module.exports = function(app) {
 
-  var BotFramework = require('./botframework');
+  var BotFramework = require('./botdomain');
   BotFramework.controller.middleware.receive.use(middleware.receive);
   BotFramework.controller.createWebhookEndpoints(app, BotFramework.bot);
-  console.log('BotFramework bot is live');
+  console.log('bot is live');
 
   // Customize your Watson Middleware object's before and after callbacks.
   middleware.before = function(message, conversationPayload, callback) {
