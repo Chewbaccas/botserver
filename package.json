@@ -1,7 +1,7 @@
 {
-  "name": "botkit-middleware-watson-multi-bot-example",
+  "name": "botserver",
   "version": "0.0.1",
-  "description": "Multiple social channel bot example using botkit-middleware-watson with Botkit.",
+  "description": "",
   "main": "server.js",
   "scripts": {
     "start": "node server.js"
